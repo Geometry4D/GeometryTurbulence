@@ -13,13 +13,17 @@ Let (u,p) be a suitable weak solution. If a space-time region V belongs to the f
 ## Route 1 — via CKN ε-regularity
 
 Inside a free zone the energy content at scale λ is small by definition: E(λ) ≤ δ ‖**e**‖²_{L²}. Decompose
+
 $$
 |\nabla u|^2 = |\mathbf{e}|^2 + \tfrac12|\boldsymbol{\omega}|^2 .
 $$
+
 If the scaled energy A(r) = (1/r)∬_{Q_r}|∇u|² satisfies A(r) < ε₀ (the CKN threshold), the solution is regular at the point. The free-zone smallness gives A(r) ≤ c_aniso · δ · (norm); requiring
+
 $$
 \delta < \frac{\varepsilon_0^{\mathrm{CKN}}}{c_{\mathrm{aniso}}}
 $$
+
 makes the CKN threshold satisfied, hence regularity. This **refines the definition** of C_free by tying δ to the CKN constant.
 
 **Gap of Route 1.** The decomposition contains the vorticity term ½|ω|², which is not directly controlled by conditions on **e** alone. A strong vortex (large |ω|) could keep |∇u|² large even when |**e**| is moderate. Route 2 closes this gap.

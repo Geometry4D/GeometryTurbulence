@@ -18,19 +18,21 @@
 
 The product of confidences across the chain is small: **Mode B is a well-supported conditional conjecture, not a proven theorem.** Its core (random-matrix decorrelation + Frostman + Lemma A3) is solid; the open links (5, 6, 7) are tied to open problems in turbulence theory, not to gaps in the present arguments.
 
-## Status of Mode A (first publication target)
+## Status of Mode A (closed — rigorous negative result)
 
-- Text of the draft is essentially complete (`article/mode_A_CKN_constant.md`).
-- **Mathematical core is open:** the main theorem rests on a geometric vortex-stretching inequality whose key *negative sign* is not yet proven (see [`../theory/open_problem_sign.md`](../theory/open_problem_sign.md)).
-- Honest rigor of the core: ~35–40%, despite the text being complete. Text completeness ≠ proof completeness.
+- Text of the draft is essentially complete (`article/mode_A_CKN_constant.md`), but the **mathematical core is now refuted**, rigorously and with two-sided skepticism (see [`../theory/open_problem_sign.md`](../theory/open_problem_sign.md)).
+- The deterministic Mode A claim required a sign-definite negative screening term in free zones. It is shown that **no such term exists**: not in vortex stretching (the proposed oscillation is an artifact of inconsistent dynamics; the eigenvalues are real), and not in the pressure term (sign-indefinite pointwise, with explicit counterexamples both ways; and the ensemble average changes sign with Reynolds number).
+- This is recorded as a **closed negative result** — a checkable statement that has been settled (refuted). The draft is retained as the record of the approach; it is not submittable as formulated.
+- A strictly weaker, regime-conditional statement (a Reynolds-range observation) remains conceivable but is not a screening theorem and is not pursued.
 
 ## Priorities
 
-1. **Critical — resolve the sign** in the geometric vortex-stretching inequality (Mode A core). Numerical falsification test first: map the sign of ∫ω·e·ω over (shear × stretching) parameter space and check whether the negative region coincides with the free-zone definition.
-2. Reconcile the two opposite-sign statements internal to the program (Lemma A3-side inequality vs. the Mode A inequality) before building on either.
-3. Align the free-zone definition between the paper and the program (the paper currently describes strong stretching, i.e. C_small, under the name "free zone").
-4. Close Lemma A3 (85% → 95%): a rigorous Lipschitz estimate for the vorticity direction from the C_free conditions. Pure PDE, independent of open turbulence problems.
-5. DNS validation (JHTDB) of links 5, 6, 7 — requires external data access.
+Mode A is closed (see above); the program's live line is now Mode B and the consolidation of its verified core.
+
+1. **Mode B — sharpen the conditional result.** State precisely what is proven and under exactly which hypotheses: the chain dim_H(E) = 1 + log₂(1 − φ_free) given (i) the self-similar cascade (φ_free > 0 at all scales) and (ii) transversality of free-zone gaps. Separate the verified core (Lemma ODE-1, GOE decorrelation, Frostman, Lemma A3) from the conditional links (5, 6, 7) with honest confidence on each.
+2. **Close Lemma A3 (85% → 95%):** a rigorous Lipschitz estimate for the vorticity direction from the C_free conditions. Pure PDE, independent of open turbulence problems.
+3. **Align the free-zone definition** between the (retained) paper draft and the program: the draft uses strong stretching (C_small in program terms) under the name "free zone"; the program uses moderate anisotropy with shear. Resolve the naming.
+4. **Links 5, 6, 7** are tied to open problems in turbulence (K41 / intermittency, transversality). Do not re-attack them analytically in cycles; either decompose into a verifiable sub-question or record the resource requirement (N ≥ 128 DNS) explicitly.
 
 ## Closed negative results (recorded to avoid revisiting)
 
