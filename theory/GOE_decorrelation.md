@@ -29,6 +29,7 @@ The leading value ½ is the value for two **independent uniformly random** direc
 **Step 2 — independence across bands.** Bands j and j+1 are disjoint sets of wavenumbers, so their phases are independent — *even under a common amplitude modulation from a coherent structure*. Orientation is a phase object, not an amplitude object; this is why decorrelation survives strong coherent vortices (see numerics).
 
 **Step 3 — exact expectation.** For ξ^{(j+1)} uniform on S² and any fixed ξ^{(j)}, the projection cos = ⟨ξ^{(j)},ξ^{(j+1)}⟩ is **uniform on [−1,1]** (a special property of the sphere in 3D). Hence
+
 $$
 \mathbb{E}[|\cos|] = \int_0^1 t\,dt = \tfrac12 .
 $$

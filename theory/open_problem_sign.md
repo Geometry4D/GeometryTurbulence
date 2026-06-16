@@ -9,6 +9,7 @@ This file isolates the single mathematical question on which the Mode A result (
 ## The inequality in question (Lemma 2.4 of the Mode A draft)
 
 In a free zone with Strength S₀, for suitable cut-offs φ, the draft asserts
+
 $$
 \int \boldsymbol{\omega}\cdot(\mathbf{e}\,\boldsymbol{\omega})\,\phi^2\,dx
 \;\le\; -\,c\,S_0\int |u|^2\,\phi^2\,dx
@@ -31,9 +32,11 @@ That is a genuine inequality between two competing effects, not a normalization.
 ## Internal conflict to resolve first
 
 The program contains a second inequality for the same quantity with the **opposite** sign — a *lower* bound of the form
+
 $$
 \int_U \boldsymbol{\omega}\cdot\mathbf{e}\cdot\boldsymbol{\omega}\,dx \;\gtrsim\; c\,J_{\mathrm{geo}}(U,t) - (\text{error}),
 $$
+
 arising on the C_small / blow-up side of the theory (it is what drives the ODE blow-up criterion). One quantity, two inequalities pulling in opposite directions. These must be reconciled — presumably they apply to different classes (C_free vs C_small) under different hypotheses — **before** either is built upon. Clarifying this is a prerequisite, not an afterthought.
 
 ---
@@ -59,3 +62,58 @@ Three outcomes, all informative:
 ## Honest assessment
 
 Rigor of this step: **~35%** (a logical schema exists; the decisive sign is unproven). Any status label of "100%" or "closed" for Mode A that ignores this is inflation. Until the sign is established (analytically, or at least mapped and confirmed numerically, and ideally checked by a PDE specialist), Mode A is not a complete proof.
+
+---
+
+## Update (2026-06-15): the vortex-stretching route is closed
+
+A candidate mechanism for the negative sign was proposed (shear-layer cross term): with the strain tensor in a shear layer and small axial stretching $|a| \ll s$,
+$$
+\boldsymbol{\omega}\cdot\mathbf{e}\cdot\boldsymbol{\omega} = a\left(\omega_x^2 - \tfrac12\omega_y^2 - \tfrac12\omega_z^2\right) + s\,\omega_x\omega_y,
+$$
+the decomposition being correct, with the cross term $s\,\omega_x\omega_y$ dominant when $a \ll s$. The proposal was that this cross term is periodically negative through an oscillatory evolution of $\omega_x,\omega_y$.
+
+**This route is refuted under consistent dynamics.** The oscillation was an artifact of an inconsistent setup: it used the rotation-only dynamics $\dot\omega_x = \tfrac{s}{2}\omega_y,\ \dot\omega_y = -\tfrac{s}{2}\omega_x$ (a purely antisymmetric matrix) for the vorticity, while evaluating $\boldsymbol{\omega}\cdot\mathbf{e}\cdot\boldsymbol{\omega}$ with the full strain. Under the consistent vortex equation $d\boldsymbol{\omega}/dt = (\mathbf{e}+\boldsymbol{\Omega})\boldsymbol{\omega}$:
+
+- the $2\times2$ system for $(\omega_x,\omega_y)$ has discriminant $9a^2/4 + s^2 > 0$, hence **real eigenvalues** $\{a,\,-a/2\}$ — a saddle, not a center; there is no sustained oscillation;
+- the vorticity aligns with the growing eigendirection, where $\omega_x\omega_y \to +s^2/8 > 0$;
+- the time-average of the cross term is therefore **not** negative: it is zero in the degenerate $a=0$ case and positive for $a \neq 0$.
+
+Three independent checks (eigenvalue analysis, direct numerical integration giving normalized $\langle\omega_x\omega_y\rangle \to +0.5$, and identification of the inconsistency) agree. The vorticity-stretching term does not supply the required integrated negative sign; the original difficulty — that vortex stretching is positive in stretching regions — stands.
+
+**What remains usable:** the decomposition above is correct, and the observation that the cross term dominates when $a \ll s$ is valid. What fails is the claim of a negative *sign* from the stretching term.
+
+**The open question now reverts to:** can the required negative term arise *elsewhere* in the pressure estimate — specifically from the nonlocal pressure Hessian — rather than from vortex stretching itself? If not, the Mode A claim must be reformulated into a statement that the positivity of vortex stretching does not block.
+
+---
+
+## Update (2026-06-15, part 2): the pressure route is also closed — rigorously, both pointwise and on average
+
+After the vortex-stretching route, the remaining candidate was the nonlocal pressure term in the local energy inequality,
+$$
+T_p := \int p\,(u\cdot\nabla\phi^2)\,dx,
+$$
+which Mode A would need to be negative and proportional to Strength. This is now resolved by a rigorous argument (not a numerical tendency), with skepticism applied in both directions.
+
+### Pointwise: $T_p$ is not sign-definite
+
+Using incompressibility and integration by parts, $T_p = -\int(\nabla p\cdot u)\phi^2$. Substituting $\nabla p$ from the momentum equation and projecting onto $u$ gives the exact identity
+$$
+T_p = -\int \tfrac{|u|^2}{2}(u\cdot\nabla\phi^2)\,dx - \nu\int\!\big[\Delta\tfrac{|u|^2}{2} - |\nabla u|^2\big]\phi^2\,dx + \int \partial_t\tfrac{|u|^2}{2}\,\phi^2\,dx .
+$$
+Only the viscous term $+\nu\int|\nabla u|^2\phi^2$ is sign-definite; the convective and unsteady terms are not. Explicit fields realize **both** signs (Bernoulli: flow accelerating into falling pressure gives $T_p>0$; decelerating flow gives $T_p<0$). Hence no deterministic bound $T_p \le -c\,\mathrm{Strength}$ exists. The earlier numerical "9 of 15 negative" was an illustration of this exact fact, not evidence for a sign.
+
+### On average: $\langle T_p\rangle$ is not sign-definite either
+
+For a statistically stationary ensemble $\langle\partial_t(\cdot)\rangle = 0$, leaving a competition between the sign-definite viscous term $+\nu\langle\int|\nabla u|^2\phi^2\rangle > 0$ and the indefinite convective flux. Dimensional balance in a shear layer (thickness $\delta$, shear $s$) gives the ratio convective/viscous $\sim s\delta^2/\nu = \mathrm{Re}$. Therefore:
+
+- at low Reynolds number ($\mathrm{Re}\ll1$) the positive viscous term dominates and $\langle T_p\rangle > 0$;
+- at high Reynolds number the indefinite convective term dominates and the sign is not fixed.
+
+A counterexample (low $\mathrm{Re}$) thus refutes any universal claim $\langle T_p\rangle < 0$. Numerical confirmation: with a smooth field (low-Re proxy) $\langle T_p\rangle = +0.30$; with a rough field (high-Re proxy) $\langle T_p\rangle = -0.22$ — the sign tracks the regime. The negative values seen at $N=48$–$64$ were a feature of a particular regime, not a universal property of free zones.
+
+### Conclusion
+
+Both the pointwise and the ensemble-averaged Mode A pressure mechanisms are **closed**. Together with the vortex-stretching result, there is no sign-definite negative contribution available — neither in vortex stretching, nor in the pressure term, nor in its average. The deterministic Mode A claim (a geometric refinement of the CKN covering constant via a negative screening term in free zones) does **not** hold as formulated.
+
+This is a rigorous negative result, established with two-sided skepticism: each refutation was itself tested for the opposite conclusion (explicit counterexamples for the pressure sign; a low-Re counterexample for the average), and only the sign-indefiniteness survived. What remains open is not Mode A but a strictly weaker, regime-conditional statement, which would be an observation about a Reynolds-number range rather than a screening theorem; it is not pursued here.

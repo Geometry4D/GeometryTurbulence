@@ -22,14 +22,17 @@ It measures both the magnitude of strain gradients and the spatial inhomogeneity
 ## 2. Geometric flux (primary form)
 
 Pointwise density:
+
 $$
 j_{\mathrm{geo}}(x,t) := \mathbf{e}:\nabla\mathbf{e} + \tfrac12\,\boldsymbol{\omega}\cdot(\nabla\times\mathbf{e}).
 $$
 
 Integral geometric flux:
+
 $$
 J_{\mathrm{geo}}(U,t) := \int_U j_{\mathrm{geo}}(x,t)\,dx + B(U,t),
 $$
+
 where B(U,t) is the boundary flux through ∂U.
 
 **Convention on B(U,t).** For periodic domains, or when the vorticity support is compactly contained in U, set B(U,t) = 0. In general |B(U,t)| ≤ C ‖**e**‖_{L²(∂U)} ‖∇**e**‖_{L²(∂U)}; a full control of this term is deferred (see roadmap, open issues).
@@ -45,9 +48,11 @@ J^{\mathrm{vort}}_{\mathrm{geo}}(U,t) := \int_U \big(\boldsymbol{\omega}\cdot\ma
 $$
 
 This is the direct vortex-stretching quantity entering the energy / enstrophy identity. It is related to the primary form through the geometric vortex-stretching inequality (see `geometric_vortex_stretching.md`): at the integral level,
+
 $$
 J^{\mathrm{vort}}_{\mathrm{geo}}(U,t) \gtrsim c\,L_U\,J_{\mathrm{geo}}(U,t)\,\frac{\|\boldsymbol{\omega}\|_{L^2(U)}^2}{\langle|\mathbf{e}|\rangle_U\,|U|} - (\text{error via } C_{\mathrm{geo}}),
 $$
+
 with remainder |R(U,t)| ≤ C C_geo(U) (‖∇u‖²_{L²(U)} + ‖∇u‖³_{L³(U)}).
 
 ---
@@ -57,6 +62,7 @@ with remainder |R(U,t)| ≤ C C_geo(U) (‖∇u‖²_{L²(U)} + ‖∇u‖³_{L�
 $$
 \mathrm{Strength}(U(t)) := \int_{\text{free zones}(t)} \big( |e_{zz}(x,t)| + |e_{r\theta}(x,t)| \big)\,dx,
 $$
+
 with the working relation Strength(U) ≍ |J_geo(U)| / ⟨|**e**|⟩_U.
 
 **Note.** This form mixes physical dimensions and must be normalized by characteristic scales (U₀, L₀, T₀) before use in a dimensionally consistent estimate. An invariant reformulation through the eigenvalues of **e** is in progress.
@@ -68,6 +74,7 @@ with the working relation Strength(U) ≍ |J_geo(U)| / ⟨|**e**|⟩_U.
 $$
 \Delta\alpha_{\mathrm{eff}} := \frac{\Delta\alpha_{\mathrm{outside}}}{1 + |J_{\mathrm{geo}}|/L_{\mathrm{free}}},
 $$
+
 where Δα_outside is the multifractal spectral width contributed by regions outside the free zones.
 
 ---
@@ -78,6 +85,7 @@ $$
 L_{\mathrm{free}}(t) := \frac{\displaystyle\int_{\text{free zones}(t)} \sigma(x,t)\,d(x,t)\,dx}{\displaystyle\int_{\text{free zones}(t)} \sigma(x,t)\,dx},
 \qquad \sigma(x,t) = |e_{zz}| + |e_{r\theta}|,
 $$
+
 the Strength-weighted mean linear size of free zones, where d(x,t) is the local distance to the zone boundary.
 
 ---
@@ -87,6 +95,7 @@ the Strength-weighted mean linear size of free zones, where d(x,t) is the local 
 $$
 g(x) = C\,\frac{x}{1+x},
 $$
+
 monotone, bounded above (g → C as x → ∞), g(0)=0; used in the alternative bound dim_H(E) ≤ 1 + g(∫₀ᵀ |T(t)|^α dt).
 
 ---
