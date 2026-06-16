@@ -1,94 +1,49 @@
-# Geometric Singularity Program — 3D Navier–Stokes Equations
+# Geometric Theory of Singularities in 3D Navier–Stokes
 
-**Research program on regularity theory and potential finite-time singularities  
-via geometric and capacity-theoretic methods.**
+A research program on the regularity theory and potential finite-time singularities of the three-dimensional incompressible Navier–Stokes equations, approached through the geometry of the strain-rate tensor.
 
 ---
 
 ## Overview
 
-This repository hosts an ongoing research program investigating the regularity and
-potential finite-time blow-up of solutions to the three-dimensional incompressible
-Navier–Stokes equations:
+The program studies the partial regularity of suitable weak solutions to the 3D Navier–Stokes equations by classifying spatio-temporal regions according to the local structure of the strain-rate tensor **e** = ½(∇u + ∇uᵀ). Three geometric classes are introduced — strong axial stretching (`C_small`), moderate anisotropy with shear (`C_free`, the *free zones*), and large-scale dominated (`C_large`) — and their dynamics are used to derive conditional regularity criteria and bounds on the Hausdorff dimension of the singular set.
+
+The work is organized along two complementary lines:
+
+- **GeometryT** — the geometric mechanism, lower bounds, and conditional blow-up / regularity criteria.
+- **Upperbonds** — quantitative conditional upper bounds on the Hausdorff dimension dim_H(E) of the singular set via the screening *Strength* of free zones.
+
+## Status
+
+This is an **active research program, not a body of proven theorems.** The repository records the current mathematical state honestly, distinguishing closed results from conditional ones and from open problems.
+
+| Result | Statement | Status |
+|---|---|---|
+| **Mode A** | Geometric refinement of the *covering constant* in the Caffarelli–Kohn–Nirenberg theorem via screening Strength | Provable in principle; **central open step: the sign in the geometric vortex-stretching inequality** (see `theory/open_problem_sign.md`) |
+| **Mode B** (ER-v2) | dim_H(E) < 1 under self-similar screening + transversality | Conditional; rests on a solid core (random-matrix decorrelation, Frostman) with open links tied to open problems in turbulence |
+
+The classical Caffarelli–Kohn–Nirenberg theorem (1982) gives dim_H(E) ≤ 1. Mode A refines the *constant* in the covering argument; Mode B is a conditional route toward dim_H(E) < 1.
+
+## Repository structure
 
 ```
-∂ₜu + (u · ∇)u = −∇p + ν Δu,    ∇ · u = 0,    (x, t) ∈ ℝ³ × (0, T).
+program/    Program overview and roadmap
+theory/     Mathematical core — one topic per file (definitions, lemmas, open problems)
+article/    Working draft of the Mode A paper
+docs/        Navigation and development log
 ```
 
-The central objects of study are the *singular set* of a suitable weak solution and
-the geometric–measure-theoretic constraints that govern its structure. The program
-draws on the framework of Caffarelli–Kohn–Nirenberg (1982) and the geometric
-vorticity criterion of Constantin–Fefferman (1993) as its two principal pillars.
+Heavy mathematics and technical derivations live in `theory/`, one self-contained file per result. The development history (iteration-by-iteration) is recorded separately in `docs/iteration_log.md`.
 
-> **Status: active research program.**  
-> No theorem proving global regularity or finite-time blow-up is claimed at this stage.  
-> All documents are working drafts subject to revision without notice.
+## Key references
 
----
+- L. Caffarelli, R. Kohn, L. Nirenberg, *Partial regularity of suitable weak solutions of the Navier–Stokes equations*, Comm. Pure Appl. Math. 35 (1982), 771–831.
+- P. Constantin, C. Fefferman, *Direction of vorticity and the problem of global regularity for the Navier–Stokes equations*, Indiana Univ. Math. J. 42 (1993), 775–789.
+- K. Falconer, *The Geometry of Fractal Sets*, Cambridge University Press (Frostman / mass distribution principle).
+- R. Betchov, *An inequality concerning the production of vorticity in isotropic turbulence*, J. Fluid Mech. 1 (1956), 497–504.
 
-## Scientific Objectives
+## Conventions
 
-| # | Objective | Current mode |
-|---|-----------|--------------|
-| A | Sharpen the dimensional bound on the singular set via an improved CKN constant | Article draft (`/article`) |
-| B | Geometric characterisation of potential blow-up via vorticity-direction alignment | Theory (`/program`) |
-| C | Numerical exploration of near-singular behaviour and critical scaling | Scripts (`/scripts`) |
-
----
-
-## Repository Structure
-
-```
-/program   — versioned development plans (program_vN.md)
-/article   — manuscript drafts  [Mode A: CKN constant refinement]
-/scripts   — numerical experiments and verification (Python / NumPy / SciPy)
-/docs      — navigation guide, executive summaries, supplementary notes
-/archive   — superseded versions of plans and drafts
-```
-
-See [`/docs/navigation.md`](docs/navigation.md) for a detailed map of the repository.
-
----
-
-## Key References
-
-1. **Caffarelli, L., Kohn, R., Nirenberg, L.** (1982).  
-   *Partial regularity of suitable weak solutions of the Navier–Stokes equations.*  
-   Comm. Pure Appl. Math. **35**(6), 771–831.  
-   doi:[10.1002/cpa.3160350604](https://doi.org/10.1002/cpa.3160350604)
-
-2. **Constantin, P., Fefferman, C.** (1993).  
-   *Direction of vorticity and the problem of global regularity for the Navier–Stokes equations.*  
-   Indiana Univ. Math. J. **42**(3), 775–789.  
-   doi:[10.1512/iumj.1993.42.42034](https://doi.org/10.1512/iumj.1993.42.42034)
-
-3. **Fefferman, C.** (2000).  
-   *Existence and smoothness of the Navier–Stokes equation.*  
-   Clay Mathematics Institute Millennium Problem statement.  
-   [claymath.org](https://www.claymath.org/millennium/navier-stokes-equation/)
-
-4. **Lin, F.** (1998).  
-   *A new proof of the Caffarelli–Kohn–Nirenberg theorem.*  
-   Comm. Pure Appl. Math. **51**(3), 241–257.
-
----
-
-## Commit Convention
-
-Structured commit messages are used throughout:
-
-```
-[YYYY-MM-DD | iter N] Short description of change
-```
-
-Example:
-```
-[2026-06-15 | iter 01] Add program_v1.md — initial research plan
-```
-
----
-
-## License
-
-All rights reserved. This is a private research repository.  
-Contact the author before citing or reproducing any content.
+- Strain-rate tensor **e** = ½(∇u + ∇uᵀ); vorticity **ω** = ∇×u; both with tr **e** = 0 (incompressibility).
+- Characteristic length of a region U: L_U = |U|^{1/3}.
+- Commit messages follow `[YYYY-MM-DD | iter N] [prefix] description`, prefixes `[prog] [thy] [art] [scr]`.
