@@ -9,9 +9,9 @@
 | 1 | E ⊂ C_small (singularities lie outside free zones) — Lemma A3 | ~85% | two independent proofs |
 | 2,3 | CKN ε-regularity; dim_H(E) ≤ 1 | classical | theorem |
 | 4 | free zones separate C_small (Cantor mechanism) | reduces to 5 + 6,7 + 10 | mechanism |
-| 5 | self-similar cascade (free zones present at all scales) | ~55% | model; tied to open K41 / intermittency |
+| 5 | self-similar cascade (free zones present at all scales) | ~55–60%; **φ_free≈0.5, roughly scale-independent on resolved octaves (DNS, N=128)** | model; supported by DNS, still tied to open K41 |
 | 6,7 | transversality (non-nested gaps across scales) | ~50% | requires DNS; class formulation under revision |
-| 8,9 | random-matrix decorrelation of eigenvector orientation, E\|cos\| = ½ | ~70% | theorem skeleton + numerics — **core** |
+| 8,9 | decorrelation of eigenvector orientation, E\|cos\| ≈ ½ | ~70% skeleton; **confirmed on a real NS field by DNS** (E\|cos\|=0.44–0.49, N=128), see `../theory/dns_validation.md` | core, now NS-validated |
 | 10 | Frostman: gaps ⟹ dimension formula | ~90% | standard geometric measure theory |
 
 **Resulting formula** (under transversality): dim_H(E) = 1 + log₂(1 − φ_free), where φ_free is the volume fraction of free zones per scale.
