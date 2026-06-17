@@ -27,6 +27,10 @@ The program advances by proposing a mechanism, testing it numerically with an ey
 
 dim_H(E) < 1 (Mode B) is a well-supported conditional conjecture with a solid core (random-matrix decorrelation + Frostman + Lemma A3) and open links (self-similar cascade, transversality) tied to open problems in turbulence theory. Mode A is text-complete but rests on the unproven sign. Neither is a finished theorem; both rest on a verified technical core.
 
+## Correction (2026-06-16): intermittency mechanism is heterogeneity, not drift signs
+
+Re-examination of the three-state model (with two-sided skepticism) corrected the stated mechanism. The anomalous scaling does **not** depend on the specific amplify-vs-suppress drift signs: it is robust to reversed and restricted-Euler-like signs, and is in fact stronger when classes differ only in noise intensity (drift set to zero). The driver is the **heterogeneity of fluctuation intensity across classes**, modulated by transitions — a stronger and sign-independent statement. Also recorded: the per-class drifts are **not derivable from Navier–Stokes by local class dynamics**, because the drift depends on the nonlocal pressure Hessian (restricted-Euler dynamics, dropping pressure, gives the opposite sign for axial stretching). This ties the limit of the reduced model to the same pressure-nonlocality barrier that closed Mode A.
+
 ## Next steps
 
 See `../program/01_roadmap.md`. The single most valuable next step is resolving the sign in the vortex-stretching inequality (numerical falsification test, then a PDE specialist).

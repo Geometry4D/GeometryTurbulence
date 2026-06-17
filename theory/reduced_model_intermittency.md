@@ -42,12 +42,14 @@ The control is decisive: removing the class structure removes the anomaly entire
 
 ## Interpretation
 
-The three-state geometry — stretching, screening, diffusion, with C_free as the transitional hub — is a **minimal generator of intermittency**. The alternation between amplifying (C_small) and suppressing (C_free) regimes, modulated by Markovian transitions, produces the heavy tails and concave $\zeta_p$ spectrum characteristic of turbulence, which a single homogeneous regime (K41) cannot.
+The three-state geometry is a **minimal generator of intermittency**: the coexistence of *heterogeneous* regimes, modulated by Markovian transitions, produces the heavy tails and concave $\zeta_p$ spectrum that a single homogeneous regime (K41) cannot.
+
+A controlled test isolates the mechanism. The anomaly is **robust to the signs of the per-class drifts** — it persists for the original signs, reversed signs, and restricted-Euler-like signs — and disappears only when all classes are made identical. Removing the drift entirely (classes differing only in noise intensity) still gives a strong anomaly ($\zeta_6-2\zeta_3 \approx -0.20$), whereas differing drifts with equal noise gives a weaker one ($\approx -0.06$). Thus the dominant driver is the **heterogeneity of fluctuation intensity across classes**, not the specific amplify-vs-suppress signs. This is a stronger statement than tying the effect to a particular drift sign, and it does not depend on the (locally underdetermined) sign of the C_small drift.
 
 ## Scope and limits
 
 - This is a **reduced model**, not a derivation from Navier–Stokes. It shows the geometric classes are *sufficient* to generate intermittency, not that real turbulence *must* follow this mechanism.
-- The drifts/noises are phenomenological; the result is the **qualitative anomaly and its dependence on class structure**, not specific exponent values.
+- The drifts/noises are phenomenological and are **not derivable from Navier–Stokes by local class dynamics**: the per-class drift depends on the nonlocal pressure Hessian (restricted-Euler dynamics, which drops pressure, even gives the opposite sign for axial stretching). The result is the **qualitative anomaly and its dependence on class heterogeneity**, not specific exponent values or drift signs.
 - Quantitative match to measured turbulence exponents (e.g. She–Lévêque) would require calibration against DNS — out of current scope.
 
 ## What this explains that K41 does not
