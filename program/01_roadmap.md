@@ -25,6 +25,10 @@ The product of confidences across the chain is small: **Mode B is a well-support
 - This is recorded as a **closed negative result** — a checkable statement that has been settled (refuted). The draft is retained as the record of the approach; it is not submittable as formulated.
 - A strictly weaker, regime-conditional statement (a Reynolds-range observation) remains conceivable but is not a screening theorem and is not pursued.
 
+## Positive result: reduced model generates intermittency (2026-06-16)
+
+A minimal three-state stochastic model built from the strain classes (C_small stretching / C_free screening / C_large diffusion, with C_free as transitional hub) reproduces **anomalous scaling of structure functions** — concave $\zeta_p$, multifractal intermittency that K41 does not give. Verified: robust across randomized parameters (100% concave), statistically significant vs single-state ($p=0.0002$), and the anomaly vanishes without class structure (control $\approx 0$, the K41 value). See `../theory/reduced_model_intermittency.md`. This is a reduced model (sufficiency, not derivation from NS), and is the most publishable positive direction in the program (a minimal geometric generator of intermittency).
+
 ## Priorities
 
 Mode A is closed (see above); the program's live line is now Mode B and the consolidation of its verified core.
