@@ -29,6 +29,24 @@ The product of confidences across the chain is small: **Mode B is a well-support
 
 A minimal three-state stochastic model built from the strain classes (C_small stretching / C_free screening / C_large diffusion, with C_free as transitional hub) reproduces **anomalous scaling of structure functions** — concave $\zeta_p$, multifractal intermittency that K41 does not give. Verified: robust across randomized parameters (100% concave), statistically significant vs single-state ($p=0.0002$), and the anomaly vanishes without class structure (control $\approx 0$, the K41 value). See `../theory/reduced_model_intermittency.md`. This is a reduced model (sufficiency, not derivation from NS), and is the most publishable positive direction in the program (a minimal geometric generator of intermittency).
 
+## Narrowed scope after DNS measurements (2026-06-17)
+
+Direct local DNS (N=128) settled several questions and narrows the program to what is measurable and what survives. See `../theory/measured_geometry.md`.
+
+**Measured, robust:**
+- **Energy-flux bridge:** C_free carries ~zero energy flux (36x smaller than C_small); C_small is a sink, C_large a source. The "free zones = zero-flux zones" claim is now measured on a real NS field, not only analytic.
+- **Persistence hierarchy + transition structure (Lagrangian):** C_free longest-lived, C_small rarest/shortest-lived; C_small<->C_free transitions routed through C_large. Robust ordering (absolute parameters drift and are not claimed).
+- **phi_free ≈ 0.50, roughly scale-independent** on resolved octaves — supports Mode B premise (i).
+- **Orientation decorrelation on NS** (E|cos| ≈ 0.44-0.49, earlier DNS).
+
+**Closed (negative):**
+- **Intermittency as a class effect:** full-field flatness only 3.27, and C_small is sub-Gaussian (2.70) — not the bursty class. No class-resolved intermittency at accessible Re; would need N>256. Together with the reduced-model finding (intermittency needs parameter heterogeneity absent in the measured flow), the intermittency line is closed.
+- Vorticity-strain alignment: not developed at this resolution (neutral).
+
+**Live analytic line:** Mode B as a conditional theorem (relaxed transversality / mixing assumption), with the measured decorrelation as empirical support for the transversality hypothesis.
+
+The program is thus a **measured geometric description of NS turbulence** (where flux lives, which regions persist, how they connect) plus the conditional dimension result. Not a regularity proof, not an intermittency mechanism — both closed.
+
 ## Priorities
 
 Mode A is closed (see above); the program's live line is now Mode B and the consolidation of its verified core.
