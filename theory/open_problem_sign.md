@@ -1,14 +1,16 @@
-# Open Problem — The Sign in the Geometric Vortex-Stretching Inequality
+# The Sign in the Geometric Vortex-Stretching Inequality — CLOSED (refuted)
 
-**Status: OPEN. This is the central unresolved step of Mode A.**
+**STATUS: CLOSED (2026-06-22). This was the central step of Mode A; it is now a rigorous NEGATIVE result. Program closed — see [`../PROGRAM_CLOSEOUT.md`](../PROGRAM_CLOSEOUT.md).**
 
-This file isolates the single mathematical question on which the Mode A result (refinement of the CKN covering constant) depends. It is recorded prominently and honestly because text-completeness of the draft does **not** imply this step is closed.
+This file isolates the single mathematical question on which the Mode A result (refinement of the CKN covering constant) depended, and records its resolution: the required sign-definite negative term **does not exist**, neither in vortex stretching nor in the pressure term nor in its ensemble average. Mode A does not hold as formulated. The investigation is preserved in full below — including the original "open" framing and the falsifiable test that closed it — because the *path* to the refutation, with two-sided skepticism at each step, is the point.
+
+> **Reading note.** The sections immediately below were written while the step was still open; they state the question and the test. The two dated updates at the end (both 2026-06-15) carry the rigorous closure. The historical "~35% rigor / OPEN" language is retained verbatim in those early sections as the development record; the final status is CLOSED-negative, as stated in this header and in the closing conclusion.
 
 ---
 
 ## The inequality in question (Lemma 2.4 of the Mode A draft)
 
-In a free zone with Strength S₀, for suitable cut-offs φ, the draft asserts
+In a free zone with Strength S₀, for suitable cut-offs φ, the draft asserted
 
 $$
 \int \boldsymbol{\omega}\cdot(\mathbf{e}\,\boldsymbol{\omega})\,\phi^2\,dx
@@ -17,7 +19,7 @@ $$
 \;+\; C'\int |\nabla u|^2\,\phi^2\,dx .
 $$
 
-The **negative leading term** −c S₀ ∫|u|²φ² is the heart of Mode A: fed into the pressure estimate it raises the ε-regularity threshold linearly in S₀, which shrinks the CKN covering constant by a factor ∝ (1 + c S_min).
+The **negative leading term** −c S₀ ∫|u|²φ² was the heart of Mode A: fed into the pressure estimate it would raise the ε-regularity threshold linearly in S₀, shrinking the CKN covering constant by a factor ∝ (1 + c S_min).
 
 ---
 
@@ -25,11 +27,11 @@ The **negative leading term** −c S₀ ∫|u|²φ² is the heart of Mode A: fed
 
 The vortex-stretching density ω·**e**·ω is, in a region of strong axial stretching, typically **positive** — stretching amplifies vorticity. This is the very mechanism that drives potential singularity formation. Asserting an integrated bound ≤ −c S₀ ∫|u|² (negative) requires that the shear component suppress stretching **more** than stretching amplifies vorticity.
 
-That is a genuine inequality between two competing effects, not a normalization. The draft's Appendix A only sketches the absorption ("three steps: integration by parts, extraction of the leading positive term, absorption using shear and the controlled geometric flux"). The decisive sign is asserted, not derived.
+That is a genuine inequality between two competing effects, not a normalization. The draft's Appendix A only sketched the absorption ("three steps: integration by parts, extraction of the leading positive term, absorption using shear and the controlled geometric flux"). The decisive sign was asserted, not derived.
 
 ---
 
-## Internal conflict to resolve first
+## Internal conflict that had to be resolved first
 
 The program contains a second inequality for the same quantity with the **opposite** sign — a *lower* bound of the form
 
@@ -37,31 +39,31 @@ $$
 \int_U \boldsymbol{\omega}\cdot\mathbf{e}\cdot\boldsymbol{\omega}\,dx \;\gtrsim\; c\,J_{\mathrm{geo}}(U,t) - (\text{error}),
 $$
 
-arising on the C_small / blow-up side of the theory (it is what drives the ODE blow-up criterion). One quantity, two inequalities pulling in opposite directions. These must be reconciled — presumably they apply to different classes (C_free vs C_small) under different hypotheses — **before** either is built upon. Clarifying this is a prerequisite, not an afterthought.
+arising on the C_small / blow-up side of the theory (it is what drives the ODE blow-up criterion). One quantity, two inequalities pulling in opposite directions. These apply to different classes (C_free vs C_small) under different hypotheses; clarifying this was a prerequisite, not an afterthought.
 
 ---
 
-## Proposed resolution path (falsifiable numerical test first)
+## The falsifiable numerical test (designed to disprove, not confirm)
 
-The recommended next step is a test designed to be able to **disprove** the inequality, not to confirm it:
+The step was attacked by a test designed to be able to **disprove** the inequality:
 
-1. **Scan a 2D parameter map**: shear strength |e_rθ| (axis 1) × axial stretching |e_zz| (axis 2), from moderate to strong.
+1. **Scan a 2D parameter map**: shear strength |e_rθ| × axial stretching |e_zz|, moderate to strong.
 2. At each point compute the sign of ∫ ω·**e**·ω.
-3. Check whether the region where the sign is **negative** coincides with the C_free definition (moderate anisotropy + strong shear).
+3. Check whether the region where the sign is **negative** coincides with the C_free definition.
 4. Use **worst-case vorticity**: take ω aligned with the stretching axis ξ₁, where ω·**e**·ω is maximally positive. If the sign is negative even there, the mechanism is robust; if not, the inequality is false as stated.
 
 Three outcomes, all informative:
-- negative sign exactly on C_free → mechanism confirmed, Mode A is close;
-- negative sign only elsewhere (e.g. only at extreme shear absent from C_free) → the free-zone definition must be changed to match the physics;
+- negative sign exactly on C_free → mechanism confirmed;
+- negative sign only elsewhere → the free-zone definition must change to match the physics;
 - never negative at physical parameters → Lemma 2.4 is false as stated and Mode A must be rebuilt.
 
-**Caveat on the test.** The sign of ω·**e**·ω depends strongly on the orientation of ω relative to the eigenframe of **e**; ω must not be fixed arbitrarily. Either average over a physical ω distribution or use the worst case above.
+**Caveat.** The sign of ω·**e**·ω depends strongly on the orientation of ω relative to the eigenframe of **e**; ω must not be fixed arbitrarily. Either average over a physical ω distribution or use the worst case above.
 
 ---
 
-## Honest assessment
+## Historical assessment (pre-closure)
 
-Rigor of this step: **~35%** (a logical schema exists; the decisive sign is unproven). Any status label of "100%" or "closed" for Mode A that ignores this is inflation. Until the sign is established (analytically, or at least mapped and confirmed numerically, and ideally checked by a PDE specialist), Mode A is not a complete proof.
+Rigor of this step at the time: **~35%** (a logical schema existed; the decisive sign was unproven). Any status label of "100%" or "closed" for Mode A that ignored this was inflation. This assessment is retained as the record of how the step stood before the two updates below settled it negatively.
 
 ---
 
@@ -82,8 +84,6 @@ the decomposition being correct, with the cross term $s\,\omega_x\omega_y$ domin
 Three independent checks (eigenvalue analysis, direct numerical integration giving normalized $\langle\omega_x\omega_y\rangle \to +0.5$, and identification of the inconsistency) agree. The vorticity-stretching term does not supply the required integrated negative sign; the original difficulty — that vortex stretching is positive in stretching regions — stands.
 
 **What remains usable:** the decomposition above is correct, and the observation that the cross term dominates when $a \ll s$ is valid. What fails is the claim of a negative *sign* from the stretching term.
-
-**The open question now reverts to:** can the required negative term arise *elsewhere* in the pressure estimate — specifically from the nonlocal pressure Hessian — rather than from vortex stretching itself? If not, the Mode A claim must be reformulated into a statement that the positivity of vortex stretching does not block.
 
 ---
 
@@ -116,4 +116,4 @@ A counterexample (low $\mathrm{Re}$) thus refutes any universal claim $\langle T
 
 Both the pointwise and the ensemble-averaged Mode A pressure mechanisms are **closed**. Together with the vortex-stretching result, there is no sign-definite negative contribution available — neither in vortex stretching, nor in the pressure term, nor in its average. The deterministic Mode A claim (a geometric refinement of the CKN covering constant via a negative screening term in free zones) does **not** hold as formulated.
 
-This is a rigorous negative result, established with two-sided skepticism: each refutation was itself tested for the opposite conclusion (explicit counterexamples for the pressure sign; a low-Re counterexample for the average), and only the sign-indefiniteness survived. What remains open is not Mode A but a strictly weaker, regime-conditional statement, which would be an observation about a Reynolds-number range rather than a screening theorem; it is not pursued here.
+This is a rigorous negative result, established with two-sided skepticism: each refutation was itself tested for the opposite conclusion (explicit counterexamples for the pressure sign; a low-Re counterexample for the average), and only the sign-indefiniteness survived. What remains conceivable is not Mode A but a strictly weaker, regime-conditional statement — an observation about a Reynolds-number range rather than a screening theorem; it is not pursued. Mode A is closed.

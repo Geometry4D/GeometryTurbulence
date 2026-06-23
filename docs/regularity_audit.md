@@ -1,8 +1,10 @@
 # Complete Audit of Regularity Approaches
 
+**STATUS: CLOSED (2026-06-22). Program closed — see [`../PROGRAM_CLOSEOUT.md`](../PROGRAM_CLOSEOUT.md).**
+
 A systematic record of every known class of approach to the 3D Navier–Stokes regularity problem, the result of attacking it within this program's geometric framework, and the single barrier that unifies the negative outcomes. This document exists so that the closure of the regularity line is demonstrably *thorough*, not premature.
 
-Each entry was tested with two-sided skepticism: every refutation was itself checked for the opposite conclusion before being recorded.
+Each entry was tested with two-sided skepticism: every refutation was itself checked for the opposite conclusion before being recorded. The two entries that were once logged as "positive" (intermittency) or "a genuine bridge" (Onsager) are annotated with their closeout status: both reproduce known results, and the bridge was additionally found overstated and partially tautological (see `../theory/measured_geometry.md`).
 
 ---
 
@@ -19,8 +21,8 @@ Each entry was tested with two-sided skepticism: every refutation was itself che
 | Approach | Result |
 |---|---|
 | Constantin–Fefferman ($\xi_\omega$ Lipschitz) | Used positively in Lemma A3 (free zones regular). As a route to global regularity it hits the barrier. |
-| Vortex-stretching depletion (Mode A) | **Closed, rigorous negative.** No sign-definite negative term in the stretching, pointwise or averaged (see `open_problem_sign.md`). |
-| Geometric measure / dimension of singular set | Conditional result (Mode B): $\dim_H(E) = 1 + \log_2(1-\varphi_{\rm free})$ under two premises tied to open turbulence problems. |
+| Vortex-stretching depletion (Mode A) | **Closed, rigorous negative.** No sign-definite negative term in the stretching, pointwise or averaged (see `../theory/open_problem_sign.md`). |
+| Geometric measure / dimension of singular set (Mode B) | **Closed, unrealizable at natural constants.** The conditional formula $\dim_H(E) = 1 + \log_2(1-\varphi_{\rm free})$ needs ζ(β) < 0.347 while ζ(β) ≥ 1 always. |
 
 ## 3. Structural (vorticity-magnitude) methods
 
@@ -49,15 +51,15 @@ Each entry was tested with two-sided skepticism: every refutation was itself che
 
 | Approach | Result |
 |---|---|
-| Multifractal / intermittency | **Positive result.** The reduced three-state model produces anomalous scaling of structure functions; the driver is class heterogeneity (see `reduced_model_intermittency.md`). |
-| Anomalous dissipation (Onsager) | **A genuine bridge, not a breakthrough.** The energy flux $\Pi \sim -\mathrm{tr}(e^3) - \tfrac14\,\omega\cdot e\cdot\omega$ is exactly the program's terms; decomposed by class, C_small carries strong forward cascade while **C_free carries ≈ zero flux** — free zones are zones of suppressed energy flux. This restates known results (Eyink; Borue–Orszag) in the framework's language; it connects the geometry to anomalous dissipation but proves nothing new about dissipation itself. |
-| Reduced / shell models | Covered by the three-state model (§6, positive). |
+| Multifractal / intermittency | **Closed (negative on NS).** A reduced three-state model *can* produce anomalous scaling of structure functions, driven by class heterogeneity (sufficiency only; see `../theory/reduced_model_intermittency.md`). But direct DNS shows the measured flow does **not** carry that heterogeneity, and is not class-intermittent (C_small is sub-Gaussian, not bursty). So classes do not generate intermittency in NS at accessible resolution. |
+| Anomalous dissipation (Onsager) | **A restatement of known results, overstated as first logged.** The energy flux $\Pi \sim -\mathrm{tr}(e^3) - \tfrac14\,\omega\cdot e\cdot\omega$ is exactly the program's terms; decomposed by class, C_small carries strong forward cascade while C_free carries comparatively little flux. **Closeout corrections:** the "≈ zero / 36×" reading is a single-threshold artifact (free-zone flux changes sign across thresholds); the classifier partially builds it in (the shape parameter $|s| \propto \mathrm{tr}(e^3)$ is one of the two flux terms); and the decomposition and its topology-conditioning are already published (Eyink; Borue–Orszag; Johnson 2020–21; Nature Sci. Rep. 2024). A bridge in the framework's language, on a weakly turbulent field — not a result about dissipation. See `../theory/measured_geometry.md` §1. |
+| Reduced / shell models | Covered by the three-state model (§6). |
 
 ## 7. Conditional criteria (the program's own focus)
 
 | Approach | Result |
 |---|---|
-| Conditional $\dim_H(E) < 1$ (Mode B) | Conditional theorem; implication provable (~85%), premises open and tied to K41 / turbulence structure. |
+| Conditional $\dim_H(E) < 1$ (Mode B) | **Closed, unrealizable** (see §2). The implication was provable (~85%); the premises are not satisfiable at natural constants. |
 | Critical free-zone fraction → regularity | Closed: the naive $(1-\gamma\varphi_{\rm free})$ multiplier fails under enstrophy concentration in C_small; $\gamma$ is not a constant and can vanish at blow-up. |
 
 ---
@@ -74,4 +76,4 @@ These are not three separate obstacles but three faces of the same gap between a
 
 ## Conclusion
 
-The regularity problem has been attacked from every known class of approach. The geometric framework is **exhausted for regularity** — demonstrably, by a unifying barrier, not by lack of effort. What the program retains as genuine output: a verified technical core (Lemma ODE-1, Lemma A3, Frostman dimension formula, the isotropy/decorrelation result with corrected coefficients), a rigorously closed negative result (Mode A), a conditional result with precisely delineated premises (Mode B), one positive result (three-state intermittency), and one bridge (geometry ↔ anomalous dissipation). The productive direction that does not require DNS is the intermittency branch.
+The regularity problem was attacked from every known class of approach. The geometric framework is **exhausted for regularity** — demonstrably, by a unifying barrier, not by lack of effort. What the program retains as genuine output: a verified technical core (Lemma ODE-1, Lemma A3, Frostman dimension formula, the isotropy/decorrelation result with corrected coefficients); a rigorously closed negative result (Mode A); a precisely-diagnosed unrealizable conditional result (Mode B); and a set of DNS measurements that, on audit, reproduce known turbulence-geometry results (flux decomposition, lifetimes, decorrelation) rather than extend them. No direction here yields a new positive result; the value is the map of why, recorded honestly. See `../PROGRAM_CLOSEOUT.md`.
