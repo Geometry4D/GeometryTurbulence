@@ -1,5 +1,7 @@
 # Definitions
 
+**Program status: CLOSED (2026-06-22) — see [`../PROGRAM_CLOSEOUT.md`](../PROGRAM_CLOSEOUT.md). These definitions are mathematically correct and are retained as the program's notation core; the results built on them (Mode A, Mode B) are closed as negative/unrealizable.**
+
 Mathematical core of the program. All objects below are used consistently throughout `theory/`.
 
 **Standing notation.** u is the velocity field, p the pressure, ω = ∇×u the vorticity. The strain-rate tensor is **e** = ½(∇u + ∇uᵀ), symmetric with tr **e** = 0 by incompressibility. For a bounded region U ⊂ ℝ³, L_U = |U|^{1/3} is its characteristic length. Angle brackets ⟨·⟩_U denote the average over U.
@@ -47,7 +49,7 @@ $$
 J^{\mathrm{vort}}_{\mathrm{geo}}(U,t) := \int_U \big(\boldsymbol{\omega}\cdot\mathbf{e}\cdot\boldsymbol{\omega}\big)\,dx + R(U,t).
 $$
 
-This is the direct vortex-stretching quantity entering the energy / enstrophy identity. It is related to the primary form through the geometric vortex-stretching inequality (see `geometric_vortex_stretching.md`): at the integral level,
+This is the direct vortex-stretching quantity entering the energy / enstrophy identity. It is related to the primary form through the geometric vortex-stretching inequality (the sign of which is analyzed, and ultimately refuted, in [`open_problem_sign.md`](open_problem_sign.md)): at the integral level,
 
 $$
 J^{\mathrm{vort}}_{\mathrm{geo}}(U,t) \gtrsim c\,L_U\,J_{\mathrm{geo}}(U,t)\,\frac{\|\boldsymbol{\omega}\|_{L^2(U)}^2}{\langle|\mathbf{e}|\rangle_U\,|U|} - (\text{error via } C_{\mathrm{geo}}),
