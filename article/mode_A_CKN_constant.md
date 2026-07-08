@@ -1,5 +1,7 @@
 # Navier–Stokes Equations: Geometric Screening and Improved Covering Constant in CKN Theorem
 
+> **RETAINED AS RECORD — CENTRAL CLAIM REFUTED (program closeout, 2026-06-22).** The main theorem of this draft rests on Lemma 2.4: a sign-definite negative screening term in free zones. That term was rigorously shown **not to exist** — neither in vortex stretching, nor in the pressure term, nor in its ensemble average; see [`../theory/open_problem_sign.md`](../theory/open_problem_sign.md) and [`../PROGRAM_CLOSEOUT.md`](../PROGRAM_CLOSEOUT.md). The text is preserved unchanged below as the record of the approach; the abstract's "we prove" does not hold, and the draft is not submittable as formulated.
+
 **Working Draft**  
 **Date:** June 14, 2026  
 **Status:** Text draft complete (99%). LaTeX conversion not requested.

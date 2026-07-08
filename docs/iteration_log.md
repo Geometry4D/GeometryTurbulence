@@ -1,10 +1,12 @@
 # Development Log
 
+**Program status: CLOSED (2026-06-22) — see [`../PROGRAM_CLOSEOUT.md`](../PROGRAM_CLOSEOUT.md). This log is the development record; "Closeout" notes below supersede the corresponding sections.**
+
 The iteration-by-iteration history of the program, kept separate from the mathematical core so that `theory/` stays clean. This log records the reasoning, including discarded approaches — the negative results are part of the scientific record.
 
 ## Methodological note
 
-The program advances by proposing a mechanism, testing it numerically with an eye to **falsification**, and only then promoting it to a claim. Over the recorded development, **seven** candidate results were caught and corrected by skeptical checking *before* entering the body of established results. Confidence percentages were lowered, not raised, whenever a gap was found. This is recorded deliberately as the working discipline of the program.
+The program advances by proposing a mechanism, testing it numerically with an eye to **falsification**, and only then promoting it to a claim. Over the recorded development, **seven** candidate results were caught and corrected by skeptical checking *before* entering the body of established results. Confidence percentages were lowered, not raised, whenever a gap was found. This is recorded deliberately as the working discipline of the program. (These seven are the formal pre-DNS corrections recorded in this log; the full program tally, including the empirical phase and the closeout audit itself, is ~25 two-sided-skepticism corrections — see `../PROGRAM_CLOSEOUT.md`.)
 
 ## The seven corrections (skeptical checks that changed course)
 
@@ -27,6 +29,8 @@ The program advances by proposing a mechanism, testing it numerically with an ey
 
 dim_H(E) < 1 (Mode B) is a well-supported conditional conjecture with a solid core (random-matrix decorrelation + Frostman + Lemma A3) and open links (self-similar cascade, transversality) tied to open problems in turbulence theory. Mode A is text-complete but rests on the unproven sign. Neither is a finished theorem; both rest on a verified technical core.
 
+> **Closeout (2026-06-22): superseded.** The sign was subsequently resolved — negatively (Mode A refuted, see `../theory/open_problem_sign.md`), and Mode B was closed as unrealizable at natural constants (requires ζ(β) < 0.347 while ζ(β) ≥ 1 always). Neither line is live.
+
 ## Correction (2026-06-16): intermittency mechanism is heterogeneity, not drift signs
 
 Re-examination of the three-state model (with two-sided skepticism) corrected the stated mechanism. The anomalous scaling does **not** depend on the specific amplify-vs-suppress drift signs: it is robust to reversed and restricted-Euler-like signs, and is in fact stronger when classes differ only in noise intensity (drift set to zero). The driver is the **heterogeneity of fluctuation intensity across classes**, modulated by transitions — a stronger and sign-independent statement. Also recorded: the per-class drifts are **not derivable from Navier–Stokes by local class dynamics**, because the drift depends on the nonlocal pressure Hessian (restricted-Euler dynamics, dropping pressure, gives the opposite sign for axial stretching). This ties the limit of the reduced model to the same pressure-nonlocality barrier that closed Mode A.
@@ -34,3 +38,5 @@ Re-examination of the three-state model (with two-sided skepticism) corrected th
 ## Next steps
 
 See `../program/01_roadmap.md`. The single most valuable next step is resolving the sign in the vortex-stretching inequality (numerical falsification test, then a PDE specialist).
+
+> **Closeout (2026-06-22): superseded — there are no next steps; the program is closed.** The step named above was carried out and resolved the sign negatively, closing Mode A.

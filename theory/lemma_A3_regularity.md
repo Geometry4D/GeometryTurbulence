@@ -53,7 +53,7 @@ Two independent arguments — the energy-based CKN route and the geometric Const
 - the exact constants in the compensation estimate;
 - control of the boundary term B(U,t) (see `definitions.md`, convention on B).
 
-Calling the lemma "fully proven" is premature; with the two routes it is close to closure. Promoting it to ~95% is priority 4 on the roadmap and is pure PDE analysis, independent of the open turbulence problems.
+Calling the lemma "fully proven" is premature; with the two routes it is close to closure. Promoting it to ~95% is priority 4 on the roadmap and is pure PDE analysis, independent of the open turbulence problems. *(Closeout 2026-06-22: the roadmap priorities are superseded — the program is closed; the lemma stands as valid standalone mathematics at ~85% and is not pursued further.)*
 
 ## References
 - P. Constantin, C. Fefferman, *Direction of vorticity and the problem of global regularity for the Navier–Stokes equations*, Indiana Univ. Math. J. 42 (1993), 775–789.

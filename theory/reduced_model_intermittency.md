@@ -2,6 +2,8 @@
 
 **Status: positive result, numerically verified with two-sided skepticism.**
 
+> **Closeout standing (2026-06-22): sufficiency only — the line is closed.** The model shows strain classes *can* generate intermittency, not that they *do* in NS: direct DNS showed the measured flow lacks the required parameter heterogeneity and is not class-intermittent (see `measured_geometry.md` §3). See [`../PROGRAM_CLOSEOUT.md`](../PROGRAM_CLOSEOUT.md).
+
 A minimal stochastic model built from the three strain classes reproduces anomalous scaling of structure functions — multifractal intermittency that K41 does not produce. This positions the geometric classification as a minimal generator of intermittent statistics.
 
 ---
